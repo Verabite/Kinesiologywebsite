@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Vera's Neuroenergetic Kinesiology 🌿</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        h1 { color: #1a73e8; }
+        .lang-de { display: none; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Insert your image in the src attribute -->
+    <img src="img/Bild.jpg" alt="A beautiful placeholder scene">
+    
+    <!-- Language Selector Buttons -->
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('de')">Deutsch</button>
+
+    <!-- English Content -->
+    <div id="content-en" class="lang-en">
+        <h1>🌿 dNeuroenergetic Kinesiology 🌿</h1>
+        <p>Find your way back to balance</p>
+        <p>Are you feeling stressed, exhausted, or internally blocked? 
+            Neuroenergetic kinesiology supports you in bringing body, mind, and energy back into harmony.</p>
+        <p>---</p>
+        <p>✨ What is Neuroenergetic Kinesiology?</p>
+        <p>This holistic method combines findings from kinesiology, energetics, and neuroscience. 
+            Gentle muscle monitoring is used to identify and specifically release blockages.</p>
+        <p>---</p>
+        <p>🌸 My Services</p>
+        <p>Stress relief & relaxation</p>
+        <p>Releasing emotional blockages</p>
+        <p>Support for physical discomfort</p>
+        <p>Strengthening your self-healing powers</p>
+        <p>Personal development & inner clarity</p>
+        <p>---</p>
+        <p>💫 Who is this for?</p>
+        <p>For everyone who wants to:</p>
+        <p>Have more energy and joy in life</p>
+        <p>Feel more internally balanced</p>
+        <p>Resolve personal issues</p>
+        <p>Discover new paths for themselves</p>
+        <p>---</p>
+        <p>🌿 Your Benefits</p>
+        <p>Individual guidance</p>
+        <p>Gentle, holistic method</p>
+        <p>Sustainable change</p>
+        <p>---</p>
+        <p>📍 Appointment & Contact</p>
+        <p>Vera's Neuroenergetic Kinesiology<br>
+            📞 Phone: ___________________<br>
+            📧 Email: ___________________<br>
+            🌐 Website: ___________________<br></p>
+        <p>---</p>
+        <p>✨ Treat yourself to some time for you ✨</p>
+        <p>I look forward to accompanying you on your journey.</p>
+    </div>
+
+    <!-- German Content -->
+    <div id="content-de" class="lang-de">
+        <h1>🌿 Veras Neuroenergetische Kinesiologie 🌿</h1>
+        <p>Finde zurück in deine Balance</p>
+        <p>Fühlst du dich gestresst, erschöpft oder innerlich blockiert? 
+            Die Neuroenergetische Kinesiologie unterstützt dich dabei, Körper, Geist und Energie wieder in Einklang zu bringen.</p>
+        <p>---</p>
+        <p>✨ Was ist Neuroenergetische Kinesiologie?</p>
+        <p>Diese ganzheitliche Methode verbindet Erkenntnisse aus der Kinesiologie, Energetik und Neurowissenschaft. 
+            Über sanfte Muskeltests werden Blockaden erkannt und gezielt gelöst.</p>
+        <p>---</p>
+        <p>🌸 Meine Angebote</p>
+        <p>Stressabbau & Entspannung</p>
+        <p>Lösung emotionaler Blockaden</p>
+        <p>Unterstützung bei körperlichen Beschwerden</p>
+        <p>Stärkung deiner Selbstheilungskräfte</p>
+        <p>Persönlichkeitsentwicklung & innere Klarheit</p>
+        <p>---</p>
+        <p>💫 Für wen ist das geeignet?</p>
+        <p>Für alle, die:</p>
+        <p>mehr Energie und Lebensfreude möchten</p>
+        <p>sich innerlich ausgeglichener fühlen wollen</p>
+        <p>persönliche Themen lösen möchten</p>
+        <p>neue Wege für sich entdecken möchten</p>
+        <p>---</p>
+        <p>🌿 Deine Vorteile</p>
+        <p>Individuelle Begleitung</p>
+        <p>Sanfte, ganzheitliche Methode</p>
+        <p>Nachhaltige Veränderung</p>
+        <p>---</p>
+        <p>📍 Termin & Kontakt</p>
+        <p>Veras Neuroenergetische Kinesiologie<br>
+            📞 Telefon: ___________________<br>
+            📧 E-Mail: ___________________<br>
+            🌐 Website: ___________________<br></p>
+        <p>---</p>
+        <p>✨ Gönn dir Zeit für dich ✨</p>
+        <p>Ich freue mich darauf, dich auf deinem Weg zu begleiten.</p>
+    </div>
+
+    <script>
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            const enContent = document.getElementById('content-en');
+            const deContent = document.getElementById('content-de');
+
+            if (lang === 'de') {
+                deContent.style.display = 'block';
+                enContent.style.display = 'none';
+                // Change title to German
+                document.title = "🌿 Veras Neuroenergetische Kinesiologie 🌿"; 
+            } else {
+                enContent.style.display = 'block';
+                deContent.style.display = 'none';
+                // Change title to English
+                document.title = "🌿 Vera's Neuroenergetic Kinesiology 🌿"; 
+            }
+        }
+    </script>
+
+</body>
+</html>
