@@ -1,140 +1,973 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌿 Vera's Neuroenergetic Kinesiology 🌿</title>
+    <title>Neuroenergetische Kinesiologie</title>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-            text-align: center;
+        /* ================================
+           GRUNDEINSTELLUNGEN
+           ================================ */
+
+        * {
+            box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #3d3b32;
+            background: #fbfaf5;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+            line-height: 1.2;
+            margin-top: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
         img {
             max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            display: block;
         }
-        h1 { color: #e81abb; }
-        .lang-de { display: none; }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 38px;
+            height: 2px;
+            background: #60765a;
+            margin: 0 auto;
+        }
+
+
+        /* ================================
+           KOPFBEREICH
+           ================================ */
+
+        header {
+            height: 70px;
+            background: rgba(255, 255, 255, 0.96);
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-inner {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #60765a;
+        }
+
+        .logo-symbol {
+            font-size: 32px;
+        }
+
+        .logo-text {
+            font-size: 13px;
+            line-height: 1.2;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            font-size: 13px;
+        }
+
+        nav a {
+            color: #514f46;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #60765a;
+        }
+
+
+        /* ================================
+           HERO-BEREICH
+           ================================ */
+
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /*
+             * Wenn du später ein eigenes Foto verwenden möchtest,
+             * ersetze "bilder/hero.jpg" durch deinen Dateinamen.
+             */
+            background:
+                linear-gradient(rgba(250, 247, 235, 0.58),
+                                rgba(250, 247, 235, 0.72)),
+                url("bilder/hero.jpg") center center / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 12px;
+            color: #302f29;
+        }
+
+        .hero h1 span {
+            color: #60765a;
+        }
+
+        .hero-subtitle {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .hero-balance {
+            color: #60765a;
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: italic;
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .hero-text {
+            max-width: 550px;
+            margin: 0 auto;
+            font-size: 15px;
+            color: #514f46;
+        }
+
+
+        /* ================================
+           WAS IST KINESIOLOGIE?
+           ================================ */
+
+        .intro {
+            background: #fbfaf5;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .intro-image {
+            border-radius: 50%;
+            overflow: hidden;
+            width: min(390px, 100%);
+            aspect-ratio: 1 / 1;
+            margin: 0 auto;
+            background: #edf0e5;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro-text h2 {
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .small-line {
+            width: 38px;
+            height: 2px;
+            background: #60765a;
+            margin-bottom: 25px;
+        }
+
+        .highlight {
+            color: #60765a;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+
+        /* ================================
+           ANWENDUNGSBEREICHE
+           ================================ */
+
+        .areas {
+            background: #eef1e7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 14px;
+            padding: 25px 15px;
+            text-align: center;
+            min-height: 190px;
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #f1f3e9;
+            border: 1px solid #dce2d3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 24px;
+        }
+
+        .card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 12px;
+            margin: 0;
+            color: #666358;
+        }
+
+
+        /* ================================
+           ABLAUF
+           ================================ */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #60765a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 14px;
+        }
+
+        .step-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .step h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .step p {
+            font-size: 13px;
+            color: #68665c;
+        }
+
+
+        /* ================================
+           ÜBER MICH
+           ================================ */
+
+        .about {
+            background: #f3f1e9;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            align-items: stretch;
+        }
+
+        .about-image {
+            min-height: 430px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text {
+            background: #fbfaf5;
+            padding: 55px;
+        }
+
+        .about-text h2 {
+            font-size: 34px;
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .about-text li {
+            margin-bottom: 12px;
+        }
+
+        .about-text li::before {
+            content: "●";
+            color: #60765a;
+            margin-right: 10px;
+        }
+
+        .signature {
+            color: #60765a;
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: italic;
+            font-size: 20px;
+        }
+
+
+        /* ================================
+           KUNDENSTIMMEN
+           ================================ */
+
+        .testimonials {
+            background: #eef1e7;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: #fbfaf5;
+            border-radius: 16px;
+            padding: 35px 30px;
+            text-align: center;
+        }
+
+        .quote {
+            color: #9baa91;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 35px;
+            line-height: 1;
+        }
+
+        .testimonial p {
+            font-size: 14px;
+            margin: 15px 0 25px;
+        }
+
+        .testimonial strong {
+            font-size: 13px;
+        }
+
+
+
+        /* ================================
+           KONTAKT
+           ================================ */
+
+        .contact {
+            background: #fbfaf5;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-text h2 {
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .contact-item {
+            margin: 22px 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #60765a;
+            margin-bottom: 4px;
+        }
+
+        .contact-item a {
+            color: #3d3b32;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #60765a;
+        }
+
+        .contact-box {
+            background: #eef1e7;
+            border-radius: 18px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact-box-icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        /* ================================
+           FOOTER
+           ================================ */
+
+        footer {
+            background: #60765a;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 12px;
+        }
+
+
+        /* ================================
+           MOBILE / TABLET
+           ================================ */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .intro-grid {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .intro-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text {
+                padding: 35px 25px;
+            }
+
+            .about-image {
+                min-height: 350px;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            .cards,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
     </style>
 </head>
 
+
 <body>
 
-    <!-- Insert your image in the src attribute -->
-    <img src="img/relax.jpg" alt="A beautiful placeholder scene">
-    
-    <!-- Language Selector Buttons -->
-    <button onclick="changeLanguage('en')">English</button>
-    <button onclick="changeLanguage('de')">Deutsch</button>
+    <!-- =====================================
+         KOPFBEREICH
+         ===================================== -->
 
-    <!-- English Content -->
-    <div id="content-en" class="lang-en">
-        <h1>🌿 Neuroenergetic Kinesiology 🌿</h1>
-        <p>Find your way back to balance</p>
-        <p>Are you feeling stressed, exhausted, or internally blocked? 
-            Neuroenergetic kinesiology supports you in bringing body, mind, and energy back into harmony.</p>
-        <p>---</p>
-        <p>✨ What is Neuroenergetic Kinesiology?</p>
-        <p>This holistic method combines findings from kinesiology, energetics, and neuroscience. 
-            Gentle muscle monitoring is used to identify and specifically release blockages.</p>
-        <p>---</p>
-        <p>🌸 My Services</p>
-        <p>Stress relief & relaxation</p>
-        <p>Releasing emotional blockages</p>
-        <p>Support for physical discomfort</p>
-        <p>Strengthening your self-healing powers</p>
-        <p>Personal development & inner clarity</p>
-        <p>---</p>
-        <p>💫 Who is this for?</p>
-        <p>For everyone who wants to:</p>
-        <p>Have more energy and joy in life</p>
-        <p>Feel more internally balanced</p>
-        <p>Resolve personal issues</p>
-        <p>Discover new paths for themselves</p>
-        <p>---</p>
-        <p>🌿 Your Benefits</p>
-        <p>Individual guidance</p>
-        <p>Gentle, holistic method</p>
-        <p>Sustainable change</p>
-        <p>---</p>
-        <p>📍 Appointment & Contact</p>
-        <p>Vera's Neuroenergetic Kinesiology<br>
-            📞 Phone: ___________________<br>
-            📧 Email: ___________________<br>
-            🌐 Website: ___________________<br></p>
-        <p>---</p>
-        <p>✨ Treat yourself to some time for you ✨</p>
-        <p>I look forward to accompanying you on your journey.</p>
-    </div>
+    <header>
+        <div class="header-inner">
 
-    <!-- German Content -->
-    <div id="content-de" class="lang-de">
-        <h1>🌿 Veras Neuroenergetische Kinesiologie 🌿</h1>
-        <p>Finde zurück in deine Balance</p>
-        <p>Fühlst du dich gestresst, erschöpft oder innerlich blockiert? 
-            Die Neuroenergetische Kinesiologie unterstützt dich dabei, Körper, Geist und Energie wieder in Einklang zu bringen.</p>
-        <p>---</p>
-        <p>✨ Was ist Neuroenergetische Kinesiologie?</p>
-        <p>Diese ganzheitliche Methode verbindet Erkenntnisse aus der Kinesiologie, Energetik und Neurowissenschaft. 
-            Über sanfte Muskeltests werden Blockaden erkannt und gezielt gelöst.</p>
-        <p>---</p>
-        <p>🌸 Meine Angebote</p>
-        <p>Stressabbau & Entspannung</p>
-        <p>Lösung emotionaler Blockaden</p>
-        <p>Unterstützung bei körperlichen Beschwerden</p>
-        <p>Stärkung deiner Selbstheilungskräfte</p>
-        <p>Persönlichkeitsentwicklung & innere Klarheit</p>
-        <p>---</p>
-        <p>💫 Für wen ist das geeignet?</p>
-        <p>Für alle, die:</p>
-        <p>mehr Energie und Lebensfreude möchten</p>
-        <p>sich innerlich ausgeglichener fühlen wollen</p>
-        <p>persönliche Themen lösen möchten</p>
-        <p>neue Wege für sich entdecken möchten</p>
-        <p>---</p>
-        <p>🌿 Deine Vorteile</p>
-        <p>Individuelle Begleitung</p>
-        <p>Sanfte, ganzheitliche Methode</p>
-        <p>Nachhaltige Veränderung</p>
-        <p>---</p>
-        <p>📍 Termin & Kontakt</p>
-        <p>Veras Neuroenergetische Kinesiologie<br>
-            📞 Telefon: ___________________<br>
-            📧 E-Mail: ___________________<br>
-            🌐 Website: ___________________<br></p>
-        <p>---</p>
-        <p>✨ Gönn dir Zeit für dich ✨</p>
-        <p>Ich freue mich darauf, dich auf deinem Weg zu begleiten.</p>
-    </div>
+            <div class="logo">
+                <div class="logo-symbol">♧</div>
 
-    <script>
-        function changeLanguage(lang) {
-            document.documentElement.lang = lang;
+                <div class="logo-text">
+                    Neuroenergetische<br>
+                    Kinesiologie
+                </div>
+            </div>
 
-            const enContent = document.getElementById('content-en');
-            const deContent = document.getElementById('content-de');
+            <nav>
+                <a href="#start">Start</a>
+                <a href="#ueber-mich">Über mich</a>
+                <a href="#ablauf">Ablauf</a>
+                <a href="#anwendungsbereiche">Anwendungsbereiche</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
 
-            if (lang === 'de') {
-                deContent.style.display = 'block';
-                enContent.style.display = 'none';
-                // Change title to German
-                document.title = "🌿 Veras Neuroenergetische Kinesiologie 🌿"; 
-            } else {
-                enContent.style.display = 'block';
-                deContent.style.display = 'none';
-                // Change title to English
-                document.title = "🌿 Vera's Neuroenergetic Kinesiology 🌿"; 
-            }
-        }
-    </script>
+        </div>
+    </header>
+
+
+    <!-- =====================================
+         HERO
+         ===================================== -->
+
+    <section class="hero" id="start">
+
+        <div class="hero-content">
+
+            <h1>
+                Neuroenergetische<br>
+                <span>Kinesiologie</span>
+            </h1>
+
+            <div class="hero-subtitle">
+                Körper. Geist. Nervensystem.
+            </div>
+
+            <div class="hero-balance">
+                In Balance.
+            </div>
+
+            <p class="hero-text">
+                Ich begleite dich dabei, Stress zu lösen, Blockaden zu erkennen
+                und dein Selbstheilungskräfte zu aktivieren – für mehr
+                Wohlbefinden, Energie und innere Ruhe.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         WAS IST NEUROENERGETISCHE KINESIOLOGIE?
+         ===================================== -->
+
+    <section class="section intro">
+
+        <div class="container">
+
+            <div class="intro-grid">
+
+                <div class="intro-image">
+                    <img src="bilder/kinesiologie.jpg"
+                         alt="Illustration zur Neuroenergetischen Kinesiologie">
+                </div>
+
+                <div class="intro-text">
+
+                    <h2>
+                        Was ist Neuroenergetische
+                        Kinesiologie?
+                    </h2>
+
+                    <div class="small-line"></div>
+
+                    <p>
+                        Die <strong>Neuroenergetische Kinesiologie</strong>
+                        verbindet neueste Erkenntnisse aus der
+                        Neurowissenschaft mit kinesiologischen Methoden.
+                    </p>
+
+                    <p>
+                        Sie hilft dabei, Stressmuster im Nervensystem zu
+                        erkennen und aufzulösen, emotionale Belastungen zu
+                        verarbeiten und die körpereigene Regulation zu stärken.
+                    </p>
+
+                    <p class="highlight">
+                        Für mehr Balance – auf allen Ebenen.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ANWENDUNGSBEREICHE
+         ===================================== -->
+
+    <section class="section areas" id="anwendungsbereiche">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Wobei kann sie unterstützen?</h2>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-icon">☁</div>
+                    <h3>Stress &amp;<br>Überforderung</h3>
+                    <p>
+                        Zur Ruhe kommen und innere Anspannung reduzieren.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">♡</div>
+                    <h3>Emotionale<br>Belastungen</h3>
+                    <p>
+                        Alte Muster lösen und emotionale Balance finden.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">▣</div>
+                    <h3>Erschöpfung</h3>
+                    <p>
+                        Energie zurückgewinnen und neue Kraft schöpfen.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">◎</div>
+                    <h3>Konzentration &amp;<br>Lernen</h3>
+                    <p>
+                        Mentale Klarheit stärken und Leistungsfähigkeit fördern.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">♙</div>
+                    <h3>Schmerzen &amp;<br>Verspannungen</h3>
+                    <p>
+                        Körperliche Blockaden lösen und Wohlbefinden steigern.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">♧</div>
+                    <h3>Persönliche<br>Entwicklung</h3>
+                    <p>
+                        Sich selbst besser verstehen und wachsen.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ABLAUF EINER SITZUNG
+         ===================================== -->
+
+    <section class="section" id="ablauf">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>So läuft eine Sitzung ab</h2>
+            </div>
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">☏</div>
+                    <h3>Kennenlernen &amp; Gespräch</h3>
+                    <p>
+                        Wir besprechen dein Anliegen und deine Ziele.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">♧</div>
+                    <h3>Muskeltest</h3>
+                    <p>
+                        Mit gezielten Tests finden wir Ungleichgewichte und Ursachen.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">♢</div>
+                    <h3>Individuelle Balance</h3>
+                    <p>
+                        Durch gezielte Techniken wird das Nervensystem reguliert.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">♡</div>
+                    <h3>Integration &amp; Empfehlungen</h3>
+                    <p>
+                        Du erhältst Impulse für deinen Alltag.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ÜBER MICH
+         ===================================== -->
+
+    <section class="about" id="ueber-mich">
+
+        <div class="about-grid">
+
+            <div class="about-image">
+                <img src="bilder/ueber-mich.jpg"
+                     alt="Porträt">
+            </div>
+
+            <div class="about-text">
+
+                <h2>Über mich</h2>
+
+                <div class="small-line"></div>
+
+                <p>
+                    Ich bin zertifizierte Kinesiologin mit Schwerpunkt
+                    Neuroenergetische Kinesiologie.
+                </p>
+
+                <p>
+                    Mein Ziel ist es, dich auf deinem Weg zu mehr Wohlbefinden,
+                    innerer Balance und persönlichem Wachstum zu begleiten.
+                </p>
+
+                <ul>
+                    <li>Dipl. Kinesiologin</li>
+                    <li>Fortbildungen in Neurowissenschaft &amp; Stressregulation</li>
+                    <li>Mitglied im Berufsverband für Kinesiologie</li>
+                </ul>
+
+                <div class="signature">
+                    Ich freue mich darauf, dich kennenzulernen.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         KUNDENSTIMMEN
+         ===================================== -->
+
+    <section class="section testimonials">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Stimmen meiner Klienten</h2>
+            </div>
+
+            <div class="testimonial-grid">
+
+                <div class="testimonial">
+                    <div class="quote">“</div>
+
+                    <p>
+                        Die Sitzungen haben mir geholfen, meine innere Ruhe
+                        zu lösen und endlich wieder besser zu schlafen.
+                        Ich fühle mich leichter und ausgeglichener.
+                    </p>
+
+                    <strong>Maria S.</strong>
+                </div>
+
+
+                <div class="testimonial">
+                    <div class="quote">“</div>
+
+                    <p>
+                        Ich konnte alte emotionale Themen loslassen und habe
+                        mehr Klarheit und Energie für meinen Alltag gewonnen.
+                    </p>
+
+                    <strong>Thomas K.</strong>
+                </div>
+
+
+                <div class="testimonial">
+                    <div class="quote">“</div>
+
+                    <p>
+                        Eine sehr einfühlsame und professionelle Begleitung.
+                        Ich kann die Neuroenergetische Kinesiologie von Herzen
+                        empfehlen.
+                    </p>
+
+                    <strong>Julia M.</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         KONTAKT
+         ===================================== -->
+
+    <section class="section contact" id="kontakt">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Kontakt</h2>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-text">
+
+                    <p>
+                        Du möchtest mehr erfahren oder hast eine Frage?
+                        Ich freue mich über deine Nachricht.
+                    </p>
+
+                    <div class="contact-item">
+                        <strong>E-Mail</strong>
+                        <a href="mailto:info@deine-kinesiologie.de">
+                            info@deine-kinesiologie.de
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Telefon</strong>
+                        <a href="tel:+491234567890">
+                            +49 123 4567890
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="contact-box">
+
+                    <div class="contact-box-icon">♡</div>
+
+                    <h3>Ich freue mich auf dich.</h3>
+
+                    <p>
+                        Melde dich gerne per E-Mail oder telefonisch.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FOOTER
+         ===================================== -->
+
+    <footer>
+        <div class="container">
+            © 2026 Neuroenergetische Kinesiologie
+        </div>
+    </footer>
 
 </body>
 </html>
